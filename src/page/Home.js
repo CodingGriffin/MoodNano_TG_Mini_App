@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 
 import Character from '../components/Character';
+import Functions from '../components/Functions';
 import EnergyJar from '../components/EnergyJar';
 import MoodProgressBar from '../components/MoodProgressBar';
 import MoodDisplay from '../components/MoodDisplay';
@@ -108,7 +109,7 @@ const Home = ({isDarkMode}) => {
                     />
                     </div>
                 </div> */}
-                
+                  <Functions />
                 <div className="flex-grow flex items-center justify-center mb-6 sm:mb-6"style={{ marginBottom: '10%' }}>
                     <div className="w-full aspect-square mx-auto rounded-lg overflow-visible relative" style={{ maxWidth: '130%'}}>
                     <Character 
