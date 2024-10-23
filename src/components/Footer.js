@@ -19,32 +19,17 @@ const Footer = ({ activePage, onPageChange, isDarkMode }) => {
   const theme = isDarkMode ? 'dark' : 'light';
   
   return (
-    <div className={`footer-container fixed bottom-0 left-0 right-0 pt-2 pb-safe px-2 ${themes[theme].footer.background}`}>
-      <div className="footer-frame flex justify-around items-center">
-        <FooterButton 
-          icon={HomeIcon} 
-          label="HOME" 
-          isActive={activePage === 'home'} 
-          onClick={() => onPageChange('home')}
-        />
-        <FooterButton 
-          icon={UserPlusIcon} 
-          label="TASKS" 
-          isActive={activePage === 'tasks'} 
-          onClick={() => onPageChange('tasks')}
-        />
-        <FooterButton 
-          icon={ChartBarIcon} 
-          label="BOARD" 
-          isActive={activePage === 'leaderboard'} 
-          onClick={() => onPageChange('leaderboard')}
-        />
-        <FooterButton 
-          icon={SparklesIcon} 
-          label="POWER UPS" 
-          isActive={activePage === 'powerups'} 
-          onClick={() => onPageChange('powerups')}
-        />
+    <div  className="items-center">
+      <div className='w-full'>
+        <img className='p-0 m-0 w-full bottom-0 absolute z-10' src="/assets/footer/footer_in_bg.svg" alt = "footer_in_bg"  />
+        <img className='p-0 m-0 w-full bottom-0 absolute z-10' src="/assets/footer/footer_out_bg.svg" alt = "footer_out_bg"  />
+      </div>
+      <div className='flex grid-flow-row w-full'>
+        <img onClick={() => onPageChange('home')} className='grow z-20 mt-3' src='/assets/footer/home_btn.svg' alt='home' />
+        <img onClick={() => onPageChange('tasks')} className='grow z-20' src='/assets/footer/tasks_btn.svg' alt='tasks' />
+        <img onClick={() => onPageChange('shop')} className='grow z-20 -mt-12' src='/assets/footer/shop_btn.svg' alt='shop' />
+        <img onClick={() => onPageChange('leaderboard')} className='grow z-20' src='/assets/footer/board_btn.svg' alt='board' />
+        <img onClick={() => onPageChange('powerups')} className='grow z-20 mt-3' src='/assets/footer/power_ups_btn.svg' alt='power_ups' />
       </div>
     </div>
   );

@@ -86,7 +86,7 @@ const Home = ({isDarkMode}) => {
     return (
         <>
             <div className="w-full flex-grow flex flex-col">
-                <div className='w-full'>
+                <div className='w-full h-16'>
                   <MoodDisplay />
                 </div>
                 {/* <div className="w-full flex justify-between items-start mb-2 space-x-2 px-2 sm:px-4">
