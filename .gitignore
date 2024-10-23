@@ -1,0 +1,25 @@
+
+# Dependency directories
+node_modules/
+
+# Environment variables
+.env
+*.env
+
+# Build output
+dist/
+build/
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+/ServerServer/
+   echo "node_modules/" >> .gitignore
+   echo "build/" >> .gitignore
+   echo ".env.local" >> .gitignore
+   echo ".env.development.local" >> .gitignore
+   echo ".env.test.local" >> .gitignore
+   echo ".env.production.local" >> .gitignore

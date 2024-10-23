@@ -1,0 +1,262 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: #41ABB4;
+  --app-background: url('../public/assets/back.jpeg');
+}
+
+.k-app,
+.k-page,
+.k-view {
+  height: 100% !important;
+  width: 100% !important;
+  overflow: hidden !important;
+  background-color: inherit !important; /* Inherit the background color */
+}
+
+.k-button,
+.k-button:not(.k-button-fill),
+.k-button.k-button-clear {
+  --k-button-bg-color: transparent !important;
+  background-color: transparent !important;
+}
+
+.k-button:active,
+.k-button:not(.k-button-fill):active,
+.k-button.k-button-clear:active {
+  --k-button-pressed-bg-color: transparent !important;
+  background-color: transparent !important;
+}
+
+.action-button {
+  background-color: var(--action-button-bg, transparent) !important;
+}
+
+.action-button:active {
+  background-color: var(--action-button-active-bg, rgb(59 130 246 / 1)) !important;
+}
+
+.mobile-container {
+  max-width: 100%;
+  max-height: 100%;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  display: flex;
+ 
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.character-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 0;
+}
+
+.character-element {
+  position: relative;
+  z-index: 1;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.character-shadow-container {
+  position: absolute;
+  bottom: -25%;
+  
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.character-shadow {
+  width: 40%;
+  max-width: 100px;
+  height: auto;
+  opacity: 0.3;
+  transform: translateY(20px); 
+}
+
+.blue-shadow {
+  filter: opacity(0.3) hue-rotate(180deg) saturate(200%) brightness(50%);
+  /* Adjust these values to fine-tune the blue tint and opacity */
+}
+
+@media (prefers-color-scheme: dark) {
+  html, body, #root {
+    background-color: #0D4976; /* Default dark mode background */
+  }
+}
+
+@media (min-width: 900px) {
+  .mobile-container {
+    max-width: 420px;
+    max-height: 800px;
+    
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.footer-container {
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  z-index: 50;
+  position: absolute;
+  bottom: 25px; /* Position 16px from bottom */
+  left: 0;
+  right: 0;
+  height: 60px; /* Set a fixed height */
+}
+
+.footer-frame {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 420px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.footer-button {
+  flex: 1;
+  backdrop-filter: blur(154px) brightness(100%);
+  border-left: 1px solid transparent;
+  border-image: linear-gradient(to bottom, rgb(13, 73, 118) 48.28%, transparent) 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 0 10px;
+  height: 66px;
+  transition: all 0.3s ease;
+  position: relative;
+  background-color:#0098ea;
+  overflow: visible; 
+}
+
+.footer-button:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-left: none;
+}
+
+.footer-button:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.footer-button.active {
+  transform: translateY(-5px);
+  z-index: 2;
+  background-color: #f1b10c; 
+}
+
+.footer-button.active::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background-color: transparent;
+}
+
+.footer-button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background-color: transparent;
+}
+
+.footer-button-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-icon {
+  width: 24px;
+  height: 24px;
+  color:white;
+  margin-bottom: 4px;
+}
+
+.footer-label {
+  font-size: 10px;
+  font-weight: 600;
+  color:white;
+  text-align: center;
+}
+
+.footer-button.active .footer-icon,
+.footer-button.active .footer-label {
+  color:#12172c;
+}
+
+.action-button {
+  @apply h-14 text-sm;
+}
+
+.progress-bar {
+  @apply h-4.5;
+}
+
+.icon-size {
+  @apply w-6 h-6;
+}
+
+.overflow-y-auto::-webkit-scrollbar {
+  display: none;
+}
+
+.overflow-y-auto {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.video-mask {
+  mix-blend-mode: normal;
+  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,1)));
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,1));
+}
+
+@supports (-webkit-touch-callout: none) {
+  /* CSS specific to iOS devices */
+  .video-mask {
+    -webkit-mask-image: none;
+    mask-image: none;
+    background-color: transparent !important;
+  }
+  .character-element {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
+
+/* Add this new style for better performance */
+.character-container {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+ 
+}
+
