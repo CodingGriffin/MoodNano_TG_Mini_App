@@ -41,7 +41,7 @@ const MoodDisplay = ({ mood, isDarkMode,  interactionCount }) => {
     <div className="flex items-center relative mt-8">
       <div className='flex grid-flow-row w-72'>
         <img className='absolute left-6 -top-11 z-10' src='/assets/mood/rectangle.svg' alt='sad_rectangle' />
-        <p className='absolute left-18 -top-7 z-10 text-xs text-white'>😢SAD</p>
+        <p className='absolute left-16 -top-7 z-10 text-xs text-white'>😢SAD</p>
         <div className="absolute left-12 -top-1 z-20 relative w-2/3 h-[13.23px]">
           <div className="h-[10px] bg-[#29273E] rounded-[4px] backdrop-blur-[185.28px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(185.28px)_brightness(100%)]">
             {/* <div className="relative w-full sm:w-[75px] h-[13px]">
@@ -74,8 +74,8 @@ const MoodDisplay = ({ mood, isDarkMode,  interactionCount }) => {
         <p className='absolute top-7 left-1/2 transform -translate-x-1/2 z-30 text-xxs text-white font-extralight'>SECONDS</p>
       </div>
       <div className='flex grid-flow-row w-72'>
-        <img className='absolute right-5 -top-11 z-10' src='/assets/energy/rectangle.svg' alt='energy_rectangle' />
-        <p className='absolute right-16 -top-7 z-20 text-xs text-white'>😊ENERGY</p>
+        <img className='absolute right-6 -top-11 z-10' src='/assets/energy/rectangle.svg' alt='energy_rectangle' />
+        <p className='absolute right-15 -top-7 z-20 text-xs text-white'>😊ENERGY</p>
         <div className="absolute right-1 -mt-2 z-20 relative w-2/3 h-[13.23px]">
           <div className="h-[10px] bg-[#29273E] rounded-[4px] backdrop-blur-[185.28px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(185.28px)_brightness(100%)]">
             {/* <div className="relative w-full sm:w-[75px] h-[13px]">
