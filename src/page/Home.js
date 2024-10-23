@@ -3,6 +3,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Character from '../components/Character';
 import EnergyJar from '../components/EnergyJar';
 import MoodProgressBar from '../components/MoodProgressBar';
+import MoodDisplay from '../components/MoodDisplay';
 
 const Home = ({isDarkMode}) => {
 
@@ -85,7 +86,10 @@ const Home = ({isDarkMode}) => {
     return (
         <>
             <div className="w-full flex-grow flex flex-col">
-                <div className="w-full flex justify-between items-start mb-2 space-x-2 px-2 sm:px-4">
+                <div className='w-full'>
+                  <MoodDisplay />
+                </div>
+                {/* <div className="w-full flex justify-between items-start mb-2 space-x-2 px-2 sm:px-4">
                     <div className="w-1/2">
                     <MoodProgressBar 
                         mood={mood}
@@ -103,7 +107,7 @@ const Home = ({isDarkMode}) => {
                         key={energy}
                     />
                     </div>
-                </div>
+                </div> */}
                 
                 <div className="flex-grow flex items-center justify-center mb-6 sm:mb-6"style={{ marginBottom: '10%' }}>
                     <div className="w-full aspect-square mx-auto rounded-lg overflow-visible relative" style={{ maxWidth: '130%'}}>
