@@ -21,26 +21,26 @@ const ActionButton = ({ icon: Icon, label, onClick, isActive, isDarkMode, mood }
 const ActionButtons = ({ mood, energy, onInteraction, isDarkMode, questCooldown, points }) => {
   return (
     <div className="flex justify-between items-center space-x-1 w-full">
-      <ActionButton 
-        label="BOOST" 
+      <ActionButton
+        label="BOOST"
         icon={BoltIcon}
-        onClick={() => onInteraction('quest2x')} 
+        onClick={() => onInteraction('quest2x')}
         isActive={questCooldown === 0}
         isDarkMode={isDarkMode}
         mood={mood}
       />
-      <ActionButton 
-        label="MEDITATE" 
+      <ActionButton
+        label="MEDITATE"
         icon={HeartIcon}
-        onClick={() => onInteraction('meditate')} 
+        onClick={() => onInteraction('meditate')}
         isActive={energy < 500}
         isDarkMode={isDarkMode}
         mood={mood}
       />
-      <ActionButton 
-        label="EVOLVE" 
+      <ActionButton
+        label="EVOLVE"
         icon={SparklesIcon}
-        onClick={() => onInteraction('evolve')} 
+        onClick={() => onInteraction('evolve')}
         isActive={points >= 10000}
         isDarkMode={isDarkMode}
         mood={mood}

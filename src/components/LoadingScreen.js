@@ -58,7 +58,7 @@ const LoadingScreen = ({ onFinish }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black">
-      <motion.div 
+      <motion.div
         className="w-full max-w-md rounded-3xl shadow-xl overflow-hidden flex flex-col"
         style={{ height: '812px', backgroundColor: 'var(--card-background)' }}
         initial={{ opacity: 0, scale: 0.9 }}
@@ -68,7 +68,7 @@ const LoadingScreen = ({ onFinish }) => {
         <div className="p-4">
           <ArrowLeft size={24} color="var(--text-primary)" />
         </div>
-        
+
         <div className="flex-grow flex flex-col">
           <div className="flex-grow relative overflow-hidden mb-4">
             <AnimatePresence mode="wait">
@@ -91,7 +91,7 @@ const LoadingScreen = ({ onFinish }) => {
               </motion.div>
             </AnimatePresence>
           </div>
-          
+
           <div className="px-6 pb-6">
             <AnimatePresence mode="wait">
               <motion.h2
@@ -105,7 +105,7 @@ const LoadingScreen = ({ onFinish }) => {
                 {content.title}
               </motion.h2>
             </AnimatePresence>
-            
+
             <AnimatePresence mode="wait">
               <motion.p
                 key={`feeling-${stage}`}
@@ -118,7 +118,7 @@ const LoadingScreen = ({ onFinish }) => {
                 I'm feeling {content.feeling}
               </motion.p>
             </AnimatePresence>
-            
+
             <AnimatePresence mode="wait">
               <motion.p
                 key={`subtitle-${stage}`}
@@ -131,14 +131,14 @@ const LoadingScreen = ({ onFinish }) => {
                 {content.subtitle}
               </motion.p>
             </AnimatePresence>
-            
-            <motion.div 
+
+            <motion.div
               className="w-full bg-[var(--app-background)] h-2 rounded-full overflow-hidden"
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <motion.div 
+              <motion.div
                 className="h-full bg-[var(--level-progress-bar-fill)]"
                 style={{ width: `${progress}%` }}
                 transition={{ type: 'spring', stiffness: 50 }}
@@ -146,9 +146,9 @@ const LoadingScreen = ({ onFinish }) => {
             </motion.div>
           </div>
         </div>
-        
+
         {stage === 3 && progress === 100 && (
-          <motion.button 
+          <motion.button
             className="w-full bg-[var(--button-background)] text-[var(--text-primary)] py-4 text-lg font-semibold"
             onClick={onFinish}
             initial={{ opacity: 0, y: 20 }}

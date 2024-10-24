@@ -81,14 +81,14 @@ const Character = ({ mood, onTap, isDarkMode, isInteracting }) => {
   useEffect(() => {
     if (animationFormat === 'png' && !firstFramesLoaded) {
       const loadAllMoods = async () => {
-        const moods = ['idle','sad', 'playful', 'happy'];
+        const moods = ['idle', 'sad', 'playful', 'happy'];
         const loadedFrames = {};
 
         for (const mood of moods) {
           loadedFrames[mood] = await loadPNGFrames(mood);
         }
-  // Add idle frames (first 60 frames of sad)
-  loadedFrames['idle'] = loadedFrames['sad'].slice(0, 56);
+        // Add idle frames (first 60 frames of sad)
+        loadedFrames['idle'] = loadedFrames['sad'].slice(0, 56);
 
         setPngFrames(loadedFrames);
         setFirstFramesLoaded(true);
@@ -247,7 +247,7 @@ const Character = ({ mood, onTap, isDarkMode, isInteracting }) => {
       const canvas = canvasRef.current;
       const ctx = canvas.getContext('2d');
       const img = pngFrames[displayedMood][currentFrame];
-      
+
       canvas.width = img.width;
       canvas.height = img.height;
 
@@ -259,24 +259,24 @@ const Character = ({ mood, onTap, isDarkMode, isInteracting }) => {
   try {
     return (
       <div className="relative w-full h-full">
-        <div 
+        <div
           className="w-full h-full flex flex-col items-center justify-end cursor-pointer character-container"
           onClick={handleTap}
-          style={{ 
-            maxHeight: 'calc(100vh - 80px)', 
-            zIndex: 1, 
+          style={{
+            maxHeight: 'calc(100vh - 80px)',
+            zIndex: 1,
             overflow: 'visible', // Allow character to overflow its container
             marginBottom: '-10%' // Move the character up
-          }} 
+          }}
         >
           <div className={`flex-grow flex items-center justify-center ${isInteracting ? 'interacting' : ''}`} style={{ transform: 'translateY(-1%)' }}>
             {showLoader ? renderLoader() : renderCharacter()}
           </div>
         </div>
         <div className="character-shadow-container">
-          <img 
-            src="/assets/shad.png" 
-            alt="Character Shadow" 
+          <img
+            src="/assets/shad.png"
+            alt="Character Shadow"
             className="character-shadow bleu-shadow"
             style={{
               width: '100vw',

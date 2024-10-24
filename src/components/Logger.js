@@ -3,7 +3,7 @@ import WebApp from '../utils/telegramWebApp';
 export const logToTelegram = async (logType, message) => {
   try {
     const formattedMessage = `${logType.toUpperCase()}\n${message}`;
-    
+
     console.log(`[${logType}] ${message}`); // This will show up in the browser console
 
     WebApp.sendData(JSON.stringify({

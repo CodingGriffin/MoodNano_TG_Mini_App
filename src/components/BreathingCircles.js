@@ -20,8 +20,8 @@ const BreathingCircles = ({ mood, isDarkMode }) => {
   return (
     <div className="absolute inset-0 flex items-center justify-center">
       <div className={`w-[180%] h-[100%] absolute animate-breathe rounded-full ${colors[2]}`}></div>
-      <div className={`w-[160%] h-[160%] absolute animate-breathe rounded-full ${colors[1]}`} style={{animationDelay: '0.5s'}}></div>
-      <div className={`w-[140%] h-[160%] absolute animate-breathe rounded-full ${colors[0]}`} style={{animationDelay: '1s'}}></div>
+      <div className={`w-[160%] h-[160%] absolute animate-breathe rounded-full ${colors[1]}`} style={{ animationDelay: '0.5s' }}></div>
+      <div className={`w-[140%] h-[160%] absolute animate-breathe rounded-full ${colors[0]}`} style={{ animationDelay: '1s' }}></div>
       <div className={`w-[100px] h-[100px] absolute rounded-full animate-glow`} style={{
         background: `radial-gradient(circle, ${glowColor} 1%, transparent 70%)`,
         animation: 'glow 2s ease-in-out infinite'

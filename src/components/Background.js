@@ -32,17 +32,17 @@ const Background = ({ emotionState }) => {
         <motion.div
           key={i}
           className="absolute text-2xl opacity-20"
-          initial={{ 
-            x: Math.random() * 100 + '%', 
-            y: Math.random() * 100 + '%' 
+          initial={{
+            x: Math.random() * 100 + '%',
+            y: Math.random() * 100 + '%'
           }}
-          animate={{ 
-            x: Math.random() * 100 + '%', 
-            y: Math.random() * 100 + '%' 
+          animate={{
+            x: Math.random() * 100 + '%',
+            y: Math.random() * 100 + '%'
           }}
-          transition={{ 
-            duration: Math.random() * 10 + 10, 
-            repeat: Infinity 
+          transition={{
+            duration: Math.random() * 10 + 10,
+            repeat: Infinity
           }}
         >
           {getParticles()}
