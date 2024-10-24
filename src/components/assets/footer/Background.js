@@ -3,7 +3,7 @@ import { ReactComponent as BottomDarkBg } from "./bottom_dark_bg.svg"
 import { ReactComponent as BottomLightBg } from "./bottom_light_bg.svg"
 
 const FooterBackground = ({ width = 178, height = 108, fillColor = '#211a6b', status = "sad", isDarkMode = true }) => {
-  // let src = '';
+   const src = isDarkMode ? "/assets/footer/bottom_dark_bg.png" : "/assets/footer/bottom_light_bg.png";
   // switch (status) {
   //   case "sad":
   //     src = isDarkMode ? "/assets/footer/sad_dark_bg.png" : "/assets/footer/sad_light_bg.png";
@@ -18,7 +18,8 @@ const FooterBackground = ({ width = 178, height = 108, fillColor = '#211a6b', st
   // }
   // return (<img className='p-0 m-0 w-full bottom-0 absolute z-10' alt='background' src={src} />);
   const res = isDarkMode ? <BottomDarkBg/> : <BottomLightBg/>
-  return (<div className='p-0 m-0 w-full bottom-0 absolute z-10'>{res}</div>);
+  // return (<div className='p-0 m-0 w-full bottom-0 absolute z-10'>{res}</div>);
+  return (<img className='p-0 m-0 w-full bottom-0 absolute z-10' src={src} alt='bottom background' />)
 };
 
 export default FooterBackground;
