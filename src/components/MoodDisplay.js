@@ -46,7 +46,7 @@ const MoodDisplay = ({ mood, isDarkMode=true,  interactionCount }) => {
 
   return (
     <div className="flex items-center relative mt-8">
-      <div className='w-full absolute -top-200 mb-12 left-1/2 transform -translate-x-1/2 z-10'><MixedBg /></div>
+      <div className='w-full absolute -top-200 mb-12 left-1/2 transform -translate-x-1/2 z-10'><MixedBg isDarkMode={isDarkMode} /></div>
       <div className='flex grid-flow-row w-72'>
         {/* <div className='absolute left-6 -top-11 z-10'><MoodBg isDarkMode={isDarkMode} /></div> */}
         <p className='absolute flex grid-flow-row left-16 -top-7 z-10 text-xs pt-1'>

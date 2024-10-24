@@ -1,11 +1,21 @@
 import React from 'react';
 import { HomeIcon, UserPlusIcon, ChartBarIcon, SparklesIcon } from '@heroicons/react/24/solid';
 import FooterBackground from './assets/footer/Background';
+import { ReactComponent as HomeLightBtn } from "./assets/footer/home_light_btn.svg"
+import { ReactComponent as HomeDarkBtn } from "./assets/footer/home_dark_btn.svg"
+import { ReactComponent as TasksLightBtn } from "./assets/footer/tasks_light_btn.svg"
+import { ReactComponent as TasksDarkBtn } from "./assets/footer/tasks_dark_btn.svg"
+import { ReactComponent as ShopLightBtn } from "./assets/footer/shop_light_btn.svg"
+import { ReactComponent as ShopDarkBtn } from "./assets/footer/shop_dark_btn.svg"
+import { ReactComponent as BoardLightBtn } from "./assets/footer/board_light_btn.svg"
+import { ReactComponent as BoardDarkBtn } from "./assets/footer/board_dark_btn.svg"
+import { ReactComponent as PowerLightBtn } from "./assets/footer/power_light_btn.svg"
+import { ReactComponent as PowerDarkBtn } from "./assets/footer/power_dark_btn.svg"
 
-import themes from './themes'; 
+import themes from './themes';
 const FooterButton = ({ icon: Icon, label, isActive, onClick }) => {
   return (
-    <div 
+    <div
       className={`footer-button ${isActive ? 'active' : ''}`}
       onClick={onClick}
     >
@@ -19,27 +29,27 @@ const FooterButton = ({ icon: Icon, label, isActive, onClick }) => {
 
 const Footer = ({ activePage, onPageChange, isDarkMode }) => {
   const theme = isDarkMode ? 'dark' : 'light';
-  
+
   return (
-    <div  className="items-center">
+    <div className="items-center">
       <div className='w-full'>
         <FooterBackground isDarkMode={isDarkMode} />
       </div>
-      {isDarkMode ? 
+      {isDarkMode ?
         <div className='flex grid-flow-row w-full'>
-          <img onClick={() => onPageChange('home')} className='grow z-20 mt-3' src='/assets/footer/home_dark_btn.svg' alt='home' />
-          <img onClick={() => onPageChange('tasks')} className='grow z-20' src='/assets/footer/tasks_dark_btn.svg' alt='tasks' />
-          <img onClick={() => onPageChange('shop')} className='grow z-20 -mt-12' src='/assets/footer/shop_dark_btn.svg' alt='shop' />
-          <img onClick={() => onPageChange('leaderboard')} className='grow z-20' src='/assets/footer/board_dark_btn.svg' alt='board' />
-          <img onClick={() => onPageChange('powerups')} className='grow z-20 mt-3' src='/assets/footer/power_dark_btn.svg' alt='power_ups' />
+          <div className='grow z-20 mt-3' onClick={() => onPageChange('home')}><HomeDarkBtn /></div>
+          <div className='grow z-20' onClick={() => onPageChange('tasks')}><TasksDarkBtn /></div>
+          <div className='grow z-20 -mt-7' onClick={() => onPageChange('shop')}><ShopDarkBtn /></div>
+          <div className='grow z-20' onClick={() => onPageChange('leaderboard')}><BoardDarkBtn /></div>
+          <div className='grow z-20 mt-3' onClick={() => onPageChange('powerups')}><PowerDarkBtn /></div>
         </div>
         :
         <div className='flex grid-flow-row w-full'>
-          <img onClick={() => onPageChange('home')} className='grow z-20 mt-3' src='/assets/footer/home_light_btn.svg' alt='home' />
-          <img onClick={() => onPageChange('tasks')} className='grow z-20' src='/assets/footer/tasks_light_btn.svg' alt='tasks' />
-          <img onClick={() => onPageChange('shop')} className='grow z-20 -mt-12' src='/assets/footer/shop_light_btn.svg' alt='shop' />
-          <img onClick={() => onPageChange('leaderboard')} className='grow z-20' src='/assets/footer/board_light_btn.svg' alt='board' />
-          <img onClick={() => onPageChange('powerups')} className='grow z-20 mt-3' src='/assets/footer/power_light_btn.svg' alt='power_ups' />
+          <div className='grow z-20 mt-3' onClick={() => onPageChange('home')}><HomeLightBtn /></div>
+          <div className='grow z-20' onClick={() => onPageChange('tasks')}><TasksLightBtn /></div>
+          <div className='grow z-20 -mt-7' onClick={() => onPageChange('shop')}><ShopLightBtn /></div>
+          <div className='grow z-20' onClick={() => onPageChange('leaderboard')}><BoardLightBtn /></div>
+          <div className='grow z-20 mt-3' onClick={() => onPageChange('powerups')}><PowerLightBtn /></div>
         </div>
       }
     </div>

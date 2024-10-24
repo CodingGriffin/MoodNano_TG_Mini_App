@@ -15,9 +15,9 @@ const EnergyJar = ({ energy }) => {
         <div className="relative w-full sm:w-[154px] h-[13.23px] mt-2">
           <div className="h-[13px] bg-[#73e6f0] rounded-[2.41px] backdrop-blur-[185.28px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(185.28px)_brightness(100%)]">
             <div className="relative w-full sm:w-[132px] h-[13px]">
-              <div 
+              <div
                 className="absolute top-0 left-0 h-full transition-all duration-500 ease-in-out"
-                style={{ 
+                style={{
                   width: `${percentage}%`,
                   backgroundImage: `url(${process.env.PUBLIC_URL}/assets/energy.png)`,
                   backgroundSize: 'cover',
