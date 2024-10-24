@@ -103,29 +103,29 @@ function MyApp() {
       <Page className={`flex items-center justify-center h-full w-full ${theme.background}`}>
         { loading ? (
           <LoadingScreen />
-        ) : (
-          <div className={`w-full h-full flex flex-col mobile-container relative 
-            // ${theme.containerBg}
-            bg-cover bg-center
-          `}  style={appStyle}>
-              <Header 
-                points={points} 
-                level={level} 
-                isDarkMode={isDarkMode} 
-                telegramUser={telegramUser}
-              />
+          ) : (
+            <div className={`w-full h-full flex flex-col mobile-container relative 
+              // ${theme.containerBg}
+              bg-cover bg-center
+            `}  style={appStyle}>
+                <Header 
+                  points={points} 
+                  level={level} 
+                  isDarkMode={isDarkMode} 
+                  telegramUser={telegramUser}
+                />
+                
+                {renderActivePage()}
               
-              {renderActivePage()}
-            
-            <Footer 
-              isDarkMode={isDarkMode} 
-              activePage={activePage} 
-              onPageChange={setActivePage}
-            />
-          </div>
-        )
-      }
-    </Page>
+              <Footer 
+                isDarkMode={isDarkMode} 
+                activePage={activePage} 
+                onPageChange={setActivePage}
+              />
+            </div>
+          )
+        }
+      </Page>
     </App>
   );
 }

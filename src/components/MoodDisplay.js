@@ -1,11 +1,9 @@
 import React from 'react';
 import ProgressBar from './progress-bar-react';
-import MoodBg from './assets/mood/rectangle_bg';
-import EnergyBg from './assets/energy/rectangle_bg';
 import MoodStatusBg from './assets/time/mood_status_bg';
 import MoodStatus from './assets/time/mood';
-import TimeBg from './assets/time/rectangle_bg';
 import Energy from './assets/energy/energy';
+import MixedBg from './assets/time/mixed_bg';
 
 import themes from './themes';
 import { progress } from 'framer-motion';
@@ -48,8 +46,9 @@ const MoodDisplay = ({ mood, isDarkMode=true,  interactionCount }) => {
 
   return (
     <div className="flex items-center relative mt-8">
+      <div className='w-full absolute -top-200 mb-12 left-1/2 transform -translate-x-1/2 z-10'><MixedBg /></div>
       <div className='flex grid-flow-row w-72'>
-        <div className='absolute left-6 -top-11 z-10'><MoodBg isDarkMode={isDarkMode} /></div>
+        {/* <div className='absolute left-6 -top-11 z-10'><MoodBg isDarkMode={isDarkMode} /></div> */}
         <p className='absolute flex grid-flow-row left-16 -top-7 z-10 text-xs pt-1'>
           <div className='w-4 h-4 mx-0.5'><MoodStatus /></div>
           {isDarkMode ? 
@@ -63,7 +62,7 @@ const MoodDisplay = ({ mood, isDarkMode=true,  interactionCount }) => {
         </div>
       </div>
       <div className='flex grow w-full items-center relative -top-8 w-full'>
-        <div className='absolute -top-12 left-1/2 transform -translate-x-1/2 z-20'><TimeBg isDarkMode={isDarkMode} /></div>
+        {/* <div className='absolute -top-12 left-1/2 transform -translate-x-1/2 z-20'><TimeBg isDarkMode={isDarkMode} /></div> */}
         <div className='absolute -top-20 left-1/2 transform -translate-x-1/2 z-20' ><MoodStatusBg status = {mood} isDarkMode = {isDarkMode} /></div>
         <div className='absolute -top-14 left-1/2 transform -translate-x-1/2 z-30'><MoodStatus status = {mood} /></div>
         {isDarkMode ? 
@@ -79,7 +78,7 @@ const MoodDisplay = ({ mood, isDarkMode=true,  interactionCount }) => {
         }
       </div>
       <div className='flex grid-flow-row w-72'>
-        <div className='absolute right-6 -top-11 z-10'><EnergyBg isDarkMode={isDarkMode} /></div>
+        {/* <div className='absolute right-6 -top-11 z-10'><EnergyBg isDarkMode={isDarkMode} /></div> */}
         <p className='absolute flex grid-flow-row right-15 -top-7 z-20 text-xs text-white pt-1'>
           <div className='w-3 h-3 mx-0.5 pt-1'><Energy /></div>
           {isDarkMode ? 

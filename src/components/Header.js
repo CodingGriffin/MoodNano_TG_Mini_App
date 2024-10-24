@@ -77,7 +77,6 @@ const Header = ({ points, isDarkMode, telegramUser }) => {
           {/* <img className='flex z-20' src="/assets/header/setting.svg" alt = "setting" /> */}
         </div>
       </div>
-
     </div>
   );
 };
