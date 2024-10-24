@@ -1,5 +1,12 @@
 import React from 'react';
 import ProgressBar from './progress-bar-react';
+import MoodBg from './assets/mood/rectangle_bg';
+import EnergyBg from './assets/energy/rectangle_bg';
+import MoodStatusBg from './assets/time/mood_status_bg';
+import MoodStatus from './assets/time/mood';
+import TimeBg from './assets/time/rectangle_bg';
+import Energy from './assets/energy/energy';
+
 import themes from './themes';
 import { progress } from 'framer-motion';
 
@@ -42,66 +49,30 @@ const MoodDisplay = ({ mood, isDarkMode,  interactionCount }) => {
   return (
     <div className="flex items-center relative mt-8">
       <div className='flex grid-flow-row w-72'>
-        <img className='absolute left-6 -top-11 z-10' src='/assets/mood/rectangle.svg' alt='sad_rectangle' />
-        <p className='absolute left-16 -top-7 z-10 text-xs text-white'>😢SAD</p>
-        <div className="absolute left-12 -top-1 z-20 relative w-2/3 h-[13.23px]">
-          {/* <div className="h-[10px] bg-[#29273E] rounded-[4px] backdrop-blur-[185.28px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(185.28px)_brightness(100%)]"> */}
-            {/* <div className="relative w-full sm:w-[75px] h-[13px]">
-              <div
-                className="absolute top-0 left-0 h-full transition-all duration-500 ease-in-out"
-                style={{
-                  width: `${filledProgress}%`,
-                  backgroundImage: `url(${process.env.PUBLIC_URL}/assets/energy.png)`,
-                  backgroundSize: 'cover',
-                  backgroundRepeat: 'no-repeat',
-                  filter: `brightness(${intensity}) saturate(${intensity})`,
-                  opacity: intensity
-                }}
-              ></div>
-            </div> */}
+        <div className='absolute left-6 -top-11 z-10'><MoodBg /></div>
+        <p className='absolute flex grid-flow-row left-16 -top-7 z-10 text-xs text-white pt-1'>
+          <div className='w-4 h-4 mx-0.5'><MoodStatus /></div>
+          SAD
+        </p>
+        <div className="absolute left-12 -top-3 z-20 relative w-2/3 h-[13.23px]">
             <ProgressBar progress= {30} className= "qwe" />
-
-            {/* <div className="w-full sm:w-20 h-[10px] gap-[27.67px] absolute top-0 left-0 sm:left-1/3 flex items-center justify-between sm:justify-start">
-              {[...Array(2)].map((_, index) => (
-                <div key={index} className="relative w-[1px] h-[10px] bg-black" />
-              ))}
-            </div>             */}
-          {/* </div> */}
         </div>
       </div>
       <div className='flex grow w-full items-center relative -top-8 w-full'>
-        <img className='absolute -top-12 left-1/2 transform -translate-x-1/2 z-20' src='/assets/time/out_rectangle.svg' alt='time_out_rectangle'/>
-        <img className='absolute -top-8 left-1/2 transform -translate-x-1/2 z-20' src='/assets/time/in_rectangle.svg' alt='time_in_rectangle'/>
-        <img className='absolute -top-20 left-1/2 transform -translate-x-1/2 z-20' src='/assets/time/mood_background.svg' alt='mood_background'/>
-        <p className='absolute -top-15 left-1/2 transform -translate-x-1/2 z-30 text-4xl text-white'>😢</p>
-        <p className='absolute -top-4 left-1/2 transform -translate-x-1/2 z-30 text-3xl text-white'>01:30</p>
-        <p className='absolute top-7 left-1/2 transform -translate-x-1/2 z-30 text-xxs text-white font-extralight'>SECONDS</p>
+        <div className='absolute -top-12 left-1/2 transform -translate-x-1/2 z-20'><TimeBg /></div>
+        <div className='absolute -top-20 left-1/2 transform -translate-x-1/2 z-20' ><MoodStatusBg status = {mood} isDarkMode = {isDarkMode} /></div>
+        <div className='absolute -top-14 left-1/2 transform -translate-x-1/2 z-30'><MoodStatus status = {mood} /></div>
+        <p className='absolute -top-2 left-1/2 transform -translate-x-1/2 z-30 text-3xl text-white'>01:30</p>
+        <p className='absolute top-8 left-1/2 transform -translate-x-1/2 z-30 text-xxs text-white font-extralight'>SECONDS</p>
       </div>
       <div className='flex grid-flow-row w-72'>
-        <img className='absolute right-6 -top-11 z-10' src='/assets/energy/rectangle.svg' alt='energy_rectangle' />
-        <p className='absolute right-15 -top-7 z-20 text-xs text-white'>😊ENERGY</p>
-        <div className="absolute right-1 -mt-2 z-20 relative w-2/3 h-[13.23px]">
-          {/* <div className="h-[10px] bg-[#29273E] rounded-[4px] backdrop-blur-[185.28px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(185.28px)_brightness(100%)]"> */}
-            {/* <div className="relative w-full sm:w-[75px] h-[13px]">
-              <div
-                className="absolute top-0 left-0 h-full transition-all duration-500 ease-in-out"
-                style={{
-                  width: `${filledProgress}%`,
-                  backgroundImage: `url(${process.env.PUBLIC_URL}/assets/energy.png)`,
-                  backgroundSize: 'cover',
-                  backgroundRepeat: 'no-repeat',
-                  filter: `brightness(${intensity}) saturate(${intensity})`,
-                  opacity: intensity
-                }}
-              ></div>
-            </div> */}
+        <div className='absolute right-6 -top-11 z-10'><EnergyBg /></div>
+        <p className='absolute flex grid-flow-row right-15 -top-7 z-20 text-xs text-white pt-1'>
+          <div className='w-3 h-3 mx-0.5 pt-1'><Energy /></div>
+          ENERGY
+        </p>
+        <div className="absolute right-2 -top-3 z-20 relative w-2/3 h-[13.23px]">
             <ProgressBar progress= {30} className= "qwe" />
-            {/* <div className="w-full sm:w-20 h-[10px] gap-[27.67px] absolute top-0 left-0 sm:left-1/3 flex items-center justify-between sm:justify-start">
-              {[...Array(2)].map((_, index) => (
-                <div key={index} className="relative w-[1px] h-[10px] bg-black" />
-              ))}
-            </div>     */}
-          {/* </div> */}
         </div>        
       </div>
     </div>
