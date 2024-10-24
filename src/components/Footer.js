@@ -23,15 +23,25 @@ const Footer = ({ activePage, onPageChange, isDarkMode }) => {
   return (
     <div  className="items-center">
       <div className='w-full'>
-        <FooterBackground />
+        <FooterBackground isDarkMode={isDarkMode} />
       </div>
-      <div className='flex grid-flow-row w-full'>
-        <img onClick={() => onPageChange('home')} className='grow z-20 mt-3' src='/assets/footer/home_btn.svg' alt='home' />
-        <img onClick={() => onPageChange('tasks')} className='grow z-20' src='/assets/footer/tasks_btn.svg' alt='tasks' />
-        <img onClick={() => onPageChange('shop')} className='grow z-20 -mt-12' src='/assets/footer/shop_btn.svg' alt='shop' />
-        <img onClick={() => onPageChange('leaderboard')} className='grow z-20' src='/assets/footer/board_btn.svg' alt='board' />
-        <img onClick={() => onPageChange('powerups')} className='grow z-20 mt-3' src='/assets/footer/power_ups_btn.svg' alt='power_ups' />
-      </div>
+      {isDarkMode ? 
+        <div className='flex grid-flow-row w-full'>
+          <img onClick={() => onPageChange('home')} className='grow z-20 mt-3' src='/assets/footer/home_dark_btn.svg' alt='home' />
+          <img onClick={() => onPageChange('tasks')} className='grow z-20' src='/assets/footer/tasks_dark_btn.svg' alt='tasks' />
+          <img onClick={() => onPageChange('shop')} className='grow z-20 -mt-12' src='/assets/footer/shop_dark_btn.svg' alt='shop' />
+          <img onClick={() => onPageChange('leaderboard')} className='grow z-20' src='/assets/footer/board_dark_btn.svg' alt='board' />
+          <img onClick={() => onPageChange('powerups')} className='grow z-20 mt-3' src='/assets/footer/power_dark_btn.svg' alt='power_ups' />
+        </div>
+        :
+        <div className='flex grid-flow-row w-full'>
+          <img onClick={() => onPageChange('home')} className='grow z-20 mt-3' src='/assets/footer/home_light_btn.svg' alt='home' />
+          <img onClick={() => onPageChange('tasks')} className='grow z-20' src='/assets/footer/tasks_light_btn.svg' alt='tasks' />
+          <img onClick={() => onPageChange('shop')} className='grow z-20 -mt-12' src='/assets/footer/shop_light_btn.svg' alt='shop' />
+          <img onClick={() => onPageChange('leaderboard')} className='grow z-20' src='/assets/footer/board_light_btn.svg' alt='board' />
+          <img onClick={() => onPageChange('powerups')} className='grow z-20 mt-3' src='/assets/footer/power_light_btn.svg' alt='power_ups' />
+        </div>
+      }
     </div>
   );
 };

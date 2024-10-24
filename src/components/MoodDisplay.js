@@ -10,7 +10,7 @@ import Energy from './assets/energy/energy';
 import themes from './themes';
 import { progress } from 'framer-motion';
 
-const MoodDisplay = ({ mood, isDarkMode,  interactionCount }) => {
+const MoodDisplay = ({ mood, isDarkMode=true,  interactionCount }) => {
   const moodEmojis = {
     happy: '😊',
     neutral: '😐',
@@ -49,27 +49,44 @@ const MoodDisplay = ({ mood, isDarkMode,  interactionCount }) => {
   return (
     <div className="flex items-center relative mt-8">
       <div className='flex grid-flow-row w-72'>
-        <div className='absolute left-6 -top-11 z-10'><MoodBg /></div>
-        <p className='absolute flex grid-flow-row left-16 -top-7 z-10 text-xs text-white pt-1'>
+        <div className='absolute left-6 -top-11 z-10'><MoodBg isDarkMode={isDarkMode} /></div>
+        <p className='absolute flex grid-flow-row left-16 -top-7 z-10 text-xs pt-1'>
           <div className='w-4 h-4 mx-0.5'><MoodStatus /></div>
-          SAD
+          {isDarkMode ? 
+            <p className='text-white'>SAD</p>
+            :
+            <p className='text-black'>SAD</p>
+          }
         </p>
         <div className="absolute left-12 -top-3 z-20 relative w-2/3 h-[13.23px]">
             <ProgressBar progress= {30} className= "qwe" />
         </div>
       </div>
       <div className='flex grow w-full items-center relative -top-8 w-full'>
-        <div className='absolute -top-12 left-1/2 transform -translate-x-1/2 z-20'><TimeBg /></div>
+        <div className='absolute -top-12 left-1/2 transform -translate-x-1/2 z-20'><TimeBg isDarkMode={isDarkMode} /></div>
         <div className='absolute -top-20 left-1/2 transform -translate-x-1/2 z-20' ><MoodStatusBg status = {mood} isDarkMode = {isDarkMode} /></div>
         <div className='absolute -top-14 left-1/2 transform -translate-x-1/2 z-30'><MoodStatus status = {mood} /></div>
-        <p className='absolute -top-2 left-1/2 transform -translate-x-1/2 z-30 text-3xl text-white'>01:30</p>
-        <p className='absolute top-8 left-1/2 transform -translate-x-1/2 z-30 text-xxs text-white font-extralight'>SECONDS</p>
+        {isDarkMode ? 
+          <>
+            <p className='absolute -top-2 left-1/2 transform -translate-x-1/2 z-30 text-3xl text-white'>01:30</p>
+            <p className='absolute top-8 left-1/2 transform -translate-x-1/2 z-30 text-xxs text-white font-extralight'>SECONDS</p>
+          </>
+          :
+          <>
+            <p className='absolute -top-2 left-1/2 transform -translate-x-1/2 z-30 text-3xl text-black'>01:30</p>
+            <p className='absolute top-8 left-1/2 transform -translate-x-1/2 z-30 text-xxs text-black font-extralight'>SECONDS</p>
+          </>
+        }
       </div>
       <div className='flex grid-flow-row w-72'>
-        <div className='absolute right-6 -top-11 z-10'><EnergyBg /></div>
+        <div className='absolute right-6 -top-11 z-10'><EnergyBg isDarkMode={isDarkMode} /></div>
         <p className='absolute flex grid-flow-row right-15 -top-7 z-20 text-xs text-white pt-1'>
           <div className='w-3 h-3 mx-0.5 pt-1'><Energy /></div>
-          ENERGY
+          {isDarkMode ? 
+            <p className='text-white'>ENERGY</p>
+            :
+            <p className='text-black'>ENERGY</p>
+          }
         </p>
         <div className="absolute right-2 -top-3 z-20 relative w-2/3 h-[13.23px]">
             <ProgressBar progress= {30} className= "qwe" />

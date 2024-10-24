@@ -92,7 +92,12 @@ function MyApp() {
   };
 
   const theme = isDarkMode ? themes.dark : themes.light;
-
+  const appStyle = {
+    backgroundImage: "url('/assets/background/sad_light_bg.png')",
+    backgroundSize: 'cover', // or 'contain' depending on your needs
+    backgroundRepeat: 'no-repeat',
+    height: '100vh', // Adjust height as necessary
+  };
   return (
     <App theme={isDarkMode ? 'dark' : 'light'}>
       <Page className={`flex items-center justify-center h-full w-full ${theme.background}`}>
@@ -101,9 +106,8 @@ function MyApp() {
         ) : (
           <div className={`w-full h-full flex flex-col mobile-container relative 
             // ${theme.containerBg}
-            bg-app-background bg-cover bg-center
-          `}>
-            <div className="flex-grow overflow-y-auto overflow-x-hidden pb-16">
+            bg-cover bg-center
+          `}  style={appStyle}>
               <Header 
                 points={points} 
                 level={level} 
@@ -112,7 +116,6 @@ function MyApp() {
               />
               
               {renderActivePage()}
-            </div>
             
             <Footer 
               isDarkMode={isDarkMode} 

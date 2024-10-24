@@ -29,16 +29,25 @@ const Header = ({ points, isDarkMode, telegramUser }) => {
   return (
     <div className="items-center h-24">
       <div className='w-full absolute -top-3 z-10 opacity-1'>
-        <HeaderBackground />
+        <HeaderBackground isDarkmode = {isDarkMode} />
       </div>
       <div className='flex grid-flow-row w-full pt-4'>
         <div className='flex items-center w-40 justify-center'>
           <img className='flex z-20' src="/assets/header/avatar.svg" alt = "avatar" />
           <div className='flex pl-2'>
-          <div className='z-20'><JewelBg /></div>
+          <div className='z-20'><JewelBg isDarkMode = {isDarkMode} /></div>
             <div className="-ml-14 z-30 pt-1 w-4">
-              <p className='text-xxs text-white font-extralight p-1 pt-2'>JOOY</p>
-              <p className='text-sm text-white'>567k</p>
+              {isDarkMode ?
+              <>
+                <p className='text-xxs text-white font-extralight p-1 pt-2'>JOOY</p>
+                <p className='text-sm text-white'>567k</p>
+              </>
+              :
+              <>
+                <p className='text-xxs text-black font-extralight p-1 pt-2'>JOOY</p>
+                <p className='text-sm text-black'>567k</p>
+              </>
+              }
             </div>
             <img className='flex z-20 ml-8' src="/assets/header/jewel.svg" alt='jewel' />
         </div>
@@ -48,14 +57,23 @@ const Header = ({ points, isDarkMode, telegramUser }) => {
           <div className='flex pr-2'>
             <img className='flex z-20 mr-4' src="/assets/header/coin.svg" alt = "coin" />
             <div className="-mr-10 z-30 pt-1 w-4">
-              <p className='text-xxs text-white font-extralight p-1 pt-2'>VIBE</p>
-              <p className='text-sm text-white'>231k</p>
+            {isDarkMode ?
+              <>
+                <p className='text-xxs text-white font-extralight p-1 pt-2'>VIBE</p>
+                <p className='text-sm text-white'>231k</p>
+              </>
+              :
+              <>
+                <p className='text-xxs text-black font-extralight p-1 pt-2'>VIBE</p>
+                <p className='text-sm text-black'>231k</p>
+              </>
+            }
             </div>
-            <div className='z-20'><CoinBg /></div>
+            <div className='z-20'><CoinBg isDarkMode = {isDarkMode} /></div>
             
             {/* <img className='flex z-20 h-10' src="/assets/header/coin_bg.svg" alt='coin_background' /> */}
           </div>
-          <div className='z-20'><SettingBtn /></div>
+          <div className='z-20'><SettingBtn isDarkMode = {isDarkMode} /></div>
           {/* <img className='flex z-20' src="/assets/header/setting.svg" alt = "setting" /> */}
         </div>
       </div>

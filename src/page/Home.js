@@ -88,28 +88,9 @@ const Home = ({isDarkMode}) => {
         <>
             <div className="w-full flex-grow flex flex-col">
                 <div className='w-full h-16'>
-                  <MoodDisplay />
+                  <MoodDisplay isDarkMode={isDarkMode} />
                 </div>
-                {/* <div className="w-full flex justify-between items-start mb-2 space-x-2 px-2 sm:px-4">
-                    <div className="w-1/2">
-                    <MoodProgressBar 
-                        mood={mood}
-                        secondsUntilDecay={secondsUntilDecay}
-                        isInteracting={isInteracting}
-                        interactionCount={interactionCount}
-                        isDarkMode={isDarkMode}
-                        key={interactionCount}
-                    />
-                    </div>
-                    <div className="w-1/2">
-                    <EnergyJar 
-                        energy={energy} 
-                        isDarkMode={isDarkMode} 
-                        key={energy}
-                    />
-                    </div>
-                </div> */}
-                  <Functions />
+                <Functions isDarkMode={isDarkMode} />
                 <div className="flex-grow flex items-center justify-center mb-6 sm:mb-6"style={{ marginBottom: '10%' }}>
                     <div className="w-full aspect-square mx-auto rounded-lg overflow-visible relative" style={{ maxWidth: '130%'}}>
                     <Character 
