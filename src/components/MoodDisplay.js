@@ -1,5 +1,7 @@
 import React from 'react';
+import ProgressBar from './progress-bar-react';
 import themes from './themes';
+import { progress } from 'framer-motion';
 
 const MoodDisplay = ({ mood, isDarkMode,  interactionCount }) => {
   const moodEmojis = {
@@ -43,7 +45,7 @@ const MoodDisplay = ({ mood, isDarkMode,  interactionCount }) => {
         <img className='absolute left-6 -top-11 z-10' src='/assets/mood/rectangle.svg' alt='sad_rectangle' />
         <p className='absolute left-16 -top-7 z-10 text-xs text-white'>😢SAD</p>
         <div className="absolute left-12 -top-1 z-20 relative w-2/3 h-[13.23px]">
-          <div className="h-[10px] bg-[#29273E] rounded-[4px] backdrop-blur-[185.28px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(185.28px)_brightness(100%)]">
+          {/* <div className="h-[10px] bg-[#29273E] rounded-[4px] backdrop-blur-[185.28px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(185.28px)_brightness(100%)]"> */}
             {/* <div className="relative w-full sm:w-[75px] h-[13px]">
               <div
                 className="absolute top-0 left-0 h-full transition-all duration-500 ease-in-out"
@@ -57,12 +59,14 @@ const MoodDisplay = ({ mood, isDarkMode,  interactionCount }) => {
                 }}
               ></div>
             </div> */}
-            <div className="w-full sm:w-20 h-[10px] gap-[27.67px] absolute top-0 left-0 sm:left-1/3 flex items-center justify-between sm:justify-start">
+            <ProgressBar progress= {30} className= "qwe" />
+
+            {/* <div className="w-full sm:w-20 h-[10px] gap-[27.67px] absolute top-0 left-0 sm:left-1/3 flex items-center justify-between sm:justify-start">
               {[...Array(2)].map((_, index) => (
                 <div key={index} className="relative w-[1px] h-[10px] bg-black" />
               ))}
-            </div>            
-          </div>
+            </div>             */}
+          {/* </div> */}
         </div>
       </div>
       <div className='flex grow w-full items-center relative -top-8 w-full'>
@@ -77,7 +81,7 @@ const MoodDisplay = ({ mood, isDarkMode,  interactionCount }) => {
         <img className='absolute right-6 -top-11 z-10' src='/assets/energy/rectangle.svg' alt='energy_rectangle' />
         <p className='absolute right-15 -top-7 z-20 text-xs text-white'>😊ENERGY</p>
         <div className="absolute right-1 -mt-2 z-20 relative w-2/3 h-[13.23px]">
-          <div className="h-[10px] bg-[#29273E] rounded-[4px] backdrop-blur-[185.28px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(185.28px)_brightness(100%)]">
+          {/* <div className="h-[10px] bg-[#29273E] rounded-[4px] backdrop-blur-[185.28px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(185.28px)_brightness(100%)]"> */}
             {/* <div className="relative w-full sm:w-[75px] h-[13px]">
               <div
                 className="absolute top-0 left-0 h-full transition-all duration-500 ease-in-out"
@@ -91,12 +95,13 @@ const MoodDisplay = ({ mood, isDarkMode,  interactionCount }) => {
                 }}
               ></div>
             </div> */}
-            <div className="w-full sm:w-20 h-[10px] gap-[27.67px] absolute top-0 left-0 sm:left-1/3 flex items-center justify-between sm:justify-start">
+            <ProgressBar progress= {30} className= "qwe" />
+            {/* <div className="w-full sm:w-20 h-[10px] gap-[27.67px] absolute top-0 left-0 sm:left-1/3 flex items-center justify-between sm:justify-start">
               {[...Array(2)].map((_, index) => (
                 <div key={index} className="relative w-[1px] h-[10px] bg-black" />
               ))}
-            </div>    
-          </div>
+            </div>     */}
+          {/* </div> */}
         </div>        
       </div>
     </div>
