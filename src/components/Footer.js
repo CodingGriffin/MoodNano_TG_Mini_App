@@ -1,5 +1,6 @@
 import React from 'react';
 import { HomeIcon, UserPlusIcon, ChartBarIcon, SparklesIcon } from '@heroicons/react/24/solid';
+
 import themes from './themes'; 
 const FooterButton = ({ icon: Icon, label, isActive, onClick }) => {
   return (
@@ -21,8 +22,7 @@ const Footer = ({ activePage, onPageChange, isDarkMode }) => {
   return (
     <div  className="items-center">
       <div className='w-full'>
-        <img className='p-0 m-0 w-full bottom-0 absolute z-10' src="/assets/footer/footer_in_bg.svg" alt = "footer_in_bg"  />
-        <img className='p-0 m-0 w-full bottom-0 absolute z-10' src="/assets/footer/footer_out_bg.svg" alt = "footer_out_bg"  />
+        <img className='p-0 m-0 w-full bottom-0 absolute z-10' src="/assets/footer/background.png" alt = "footer_in_bg"  />
       </div>
       <div className='flex grid-flow-row w-full'>
         <img onClick={() => onPageChange('home')} className='grow z-20 mt-3' src='/assets/footer/home_btn.svg' alt='home' />

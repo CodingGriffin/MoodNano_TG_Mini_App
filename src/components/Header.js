@@ -29,7 +29,7 @@ const Header = ({ points, isDarkMode, telegramUser }) => {
   return (
     <div className="items-center h-24">
       <div className='w-full absolute -top-3 z-10 opacity-1'>
-        <img className='flex w-full' alt='background' src='/assets/header/background.svg' />
+        <img className='flex w-full' alt='background' src='/assets/header/background.png' />
         {/* <Background className='flex w-full' /> */}
       </div>
       <div className='flex grid-flow-row w-full pt-4'>
