@@ -8,7 +8,7 @@ import MixedBg from './assets/time/mixed_bg';
 import themes from './themes';
 import { progress } from 'framer-motion';
 
-const MoodDisplay = ({ mood, isDarkMode = true, interactionCount }) => {
+const MoodDisplay = ({ mood, isDarkMode = true, interactionCount, energy, points }) => {
   const moodEmojis = {
     happy: '😊',
     neutral: '😐',
@@ -26,11 +26,16 @@ const MoodDisplay = ({ mood, isDarkMode = true, interactionCount }) => {
     const progress = (interactionCount % totalTaps) * (100 / totalTaps);
     switch (mood) {
       case 'sad': return Math.min(100, progress);
-      case 'idle': return Math.min(100, 25 + progress);
-      case 'playful': return Math.min(100, 50 + progress);
-      case 'happy': return Math.min(100, 75 + progress);
+      // case 'idle': return Math.min(100, 25 + progress);
+      case 'playful': return Math.min(100, 35 + progress);
+      case 'happy': return Math.min(100, 70 + progress);
       default: return 0;
     }
+  };
+
+  const getEnergyProgress = () => {
+    const progress = (energy / 500) * (100);
+    return progress
   };
 
   const getIntensity = () => {
@@ -43,14 +48,14 @@ const MoodDisplay = ({ mood, isDarkMode = true, interactionCount }) => {
 
   const intensity = getIntensity();
   const filledProgress = getMoodProgress();
-
+  const energyProgress = getEnergyProgress();
   return (
     <div className="flex items-center relative mt-8">
       <div className='w-full absolute -top-200 mb-12 left-1/2 transform -translate-x-1/2 z-10'><MixedBg isDarkMode={isDarkMode} /></div>
       <div className='flex grid-flow-row w-72'>
         {/* <div className='absolute left-6 -top-11 z-10'><MoodBg isDarkMode={isDarkMode} /></div> */}
         <p className='absolute flex grid-flow-row left-16 -top-7 z-10 text-xs pt-1'>
-          <div className='w-4 h-4 mx-0.5'><MoodStatus /></div>
+          <div className='w-4 h-4 mx-0.5'><MoodStatus mood={mood} /></div>
           {isDarkMode ?
             <p className='text-white'>SAD</p>
             :
@@ -58,13 +63,13 @@ const MoodDisplay = ({ mood, isDarkMode = true, interactionCount }) => {
           }
         </p>
         <div className="absolute left-12 -top-3 z-20 relative w-2/3 h-[13.23px]">
-          <ProgressBar progress={30} className="qwe" />
+          <ProgressBar progress={filledProgress} className="qwe" />
         </div>
       </div>
       <div className='flex grow w-full items-center relative -top-8 w-full'>
         {/* <div className='absolute -top-12 left-1/2 transform -translate-x-1/2 z-20'><TimeBg isDarkMode={isDarkMode} /></div> */}
-        <div className='absolute -top-20 left-1/2 transform -translate-x-1/2 z-20' ><MoodStatusBg status={mood} isDarkMode={isDarkMode} /></div>
-        <div className='absolute -top-14 left-1/2 transform -translate-x-1/2 z-30'><MoodStatus status={mood} /></div>
+        <div className='absolute -top-20 left-1/2 transform -translate-x-1/2 z-20' ><MoodStatusBg mood={mood} isDarkMode={isDarkMode} /></div>
+        <div className='absolute -top-14 left-1/2 transform -translate-x-1/2 z-30'><MoodStatus mood={mood} /></div>
         {isDarkMode ?
           <>
             <p className='absolute -top-2 left-1/2 transform -translate-x-1/2 z-30 text-3xl text-white'>01:30</p>
@@ -88,7 +93,7 @@ const MoodDisplay = ({ mood, isDarkMode = true, interactionCount }) => {
           }
         </p>
         <div className="absolute right-2 -top-3 z-20 relative w-2/3 h-[13.23px]">
-          <ProgressBar progress={30} className="qwe" />
+          <ProgressBar progress={energyProgress} className="qwe" />
         </div>
       </div>
     </div>

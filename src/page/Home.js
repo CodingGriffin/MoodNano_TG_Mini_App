@@ -4,11 +4,10 @@ import Character from '../components/Character';
 import Functions from '../components/Functions';
 import MoodDisplay from '../components/MoodDisplay';
 
-const Home = ({ isDarkMode }) => {
+const Home = ({ isDarkMode, setMood, mood }) => {
 
   const [energy, setEnergy] = useState(500);
   const [points, setPoints] = useState(0);
-  const [mood, setMood] = useState('sad');
   const [interactionCount, setInteractionCount] = useState(0);
   const [lastInteractionTime, setLastInteractionTime] = useState(Date.now());
   const [secondsUntilDecay, setSecondsUntilDecay] = useState(120);
@@ -24,8 +23,8 @@ const Home = ({ isDarkMode }) => {
       if (timeSinceLastInteraction >= 120) {
         setMood(prevMood => {
           if (prevMood === 'happy') return 'playful';
-          if (prevMood === 'playful') return 'idle';
-          if (prevMood === 'idle') return 'sad'; // Add this line
+          if (prevMood === 'playful') return 'sad';
+          // if (prevMood === 'idle') return 'sad'; // Add this line
           return prevMood;
         });
         setLastInteractionTime(now);
@@ -36,12 +35,11 @@ const Home = ({ isDarkMode }) => {
       if (questCooldown > 0) {
         setQuestCooldown(prevCooldown => Math.max(0, prevCooldown - 1));
       }
-
       setEnergy(prevEnergy => Math.min(500, prevEnergy + 1));
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [lastInteractionTime, questCooldown]);
+  }, [lastInteractionTime, questCooldown, setMood]);
 
   const handleInteraction = useCallback((type) => {
     setIsInteracting(true);
@@ -49,6 +47,7 @@ const Home = ({ isDarkMode }) => {
 
     let pointsEarned = 10 * questMultiplier;
     let energyCost = 10;
+    let maxPoint = 1000;
 
     if (type === 'quest2x') {
       setQuestMultiplier(2);
@@ -73,8 +72,8 @@ const Home = ({ isDarkMode }) => {
 
       if (interactionCount % 10 === 9) {
         setMood(prevMood => {
-          if (prevMood === 'sad') return 'idle';
-          if (prevMood === 'idle') return 'playful';
+          // if (prevMood === 'sad') return 'idle';
+          if (prevMood === 'sad') return 'playful';
           if (prevMood === 'playful') return 'happy';
           return prevMood;
         });
@@ -86,7 +85,7 @@ const Home = ({ isDarkMode }) => {
     <>
       <div className="w-full flex-grow flex flex-col">
         <div className='w-full h-16'>
-          <MoodDisplay isDarkMode={isDarkMode} />
+          <MoodDisplay isDarkMode={isDarkMode} interactionCount={interactionCount} energy={energy} points={points} mood={mood} />
         </div>
         <Functions isDarkMode={isDarkMode} />
         <div className="flex-grow flex items-center justify-center mb-6 sm:mb-6" style={{ marginBottom: '10%' }}>

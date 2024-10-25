@@ -23,6 +23,8 @@ function MyApp() {
   const [xFollowClaimed, setXFollowClaimed] = useState(false);
   const [youtubeClaimed, setYoutubeClaimed] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [mood, setMood] = useState('sad');
+  const [backgroundImgUrl, setBackground] = useState("url('/assets/background/sad_dark_bg.png')")
 
   useEffect(() => {
     setLoading(true);
@@ -43,13 +45,32 @@ function MyApp() {
     if (isLargeScreen) {
       setIsDarkMode(true);
     } else {
-      setIsDarkMode(WebApp.colorScheme === 'dark');
+      setIsDarkMode(true);
     }
 
     WebApp.onEvent('themeChanged', () => {
       setIsDarkMode(WebApp.colorScheme === 'dark');
     });
   }, []);
+
+  useEffect(() => {
+    setBackground(e => {
+      let res = ''
+      switch (mood) {
+        case "sad":
+          res = isDarkMode ? "url('/assets/background/sad_dark_bg.png')" : "url('/assets/background/sad_light_bg.png')";
+          break;
+        case "playful":
+          res = isDarkMode ? "url('/assets/background/playful_dark_bg.png')" : "url('/assets/background/playful_light_bg.png')";
+          break;
+        case "happy":
+          res = isDarkMode ? "url('/assets/background/happy_dark_bg.png')" : "url('/assets/background/happy_light_bg.png')";
+          break;
+        default: break;
+      }
+      return res;
+    })
+  }, [mood, isDarkMode]);
 
   const handleXFollowClaim = () => {
     if (!xFollowClaimed) {
@@ -85,7 +106,9 @@ function MyApp() {
       default:
         return (
           <Home
-            isDarkMode={isDarkMode} 
+            isDarkMode={isDarkMode}
+            setMood={setMood}
+            mood={mood}
           />
         );
     }
@@ -93,7 +116,7 @@ function MyApp() {
 
   const theme = isDarkMode ? themes.dark : themes.light;
   const appStyle = {
-    backgroundImage: "url('/assets/background/sad_light_bg.png')",
+    backgroundImage: backgroundImgUrl,
     backgroundSize: 'cover', // or 'contain' depending on your needs
     backgroundRepeat: 'no-repeat',
     height: '100vh', // Adjust height as necessary
