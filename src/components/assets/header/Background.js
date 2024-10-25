@@ -1,7 +1,8 @@
 import React from 'react';
+import { ReactComponent as Header } from "./Header.svg"
 
 const HeaderBackground = ({ width = 178, height = 108, fillColor = '#211a6b', status = "sad", isDarkmode = true }) => {
-  const src = isDarkmode ? "/assets/header/header_dark_bg.png" : "/assets/header/header_light_bg.png";
+  const src = isDarkmode ? "/assets/header/header_dark_bg.png" : "//assets/header/Header.png";
 
   // switch (status) {
   //   case "sad":
@@ -15,7 +16,7 @@ const HeaderBackground = ({ width = 178, height = 108, fillColor = '#211a6b', st
   //     break;
   //   default: break;
   // }
-  return (<img className='flex w-full' alt='background' src={src} />);
+  return (<div className='flex w-full'><Header /></div>);
 };
 
 export default HeaderBackground;

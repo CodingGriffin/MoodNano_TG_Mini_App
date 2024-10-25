@@ -31,12 +31,12 @@ const Footer = ({ activePage, onPageChange, isDarkMode }) => {
   const theme = isDarkMode ? 'dark' : 'light';
 
   return (
-    <div className="items-center">
+    <div className="absolute bottom-0 right-0 w-full">
       <div className='w-full'>
         <FooterBackground isDarkMode={isDarkMode} />
       </div>
       {isDarkMode ?
-        <div className='flex grid-flow-row w-full'>
+        <div className='flex '>
           <div className='grow z-20 mt-3' onClick={() => onPageChange('home')}><HomeDarkBtn /></div>
           <div className='grow z-20' onClick={() => onPageChange('tasks')}><TasksDarkBtn /></div>
           <div className='grow z-20 -mt-7' onClick={() => onPageChange('shop')}><ShopDarkBtn /></div>
@@ -44,12 +44,12 @@ const Footer = ({ activePage, onPageChange, isDarkMode }) => {
           <div className='grow z-20 mt-3' onClick={() => onPageChange('powerups')}><PowerDarkBtn /></div>
         </div>
         :
-        <div className='flex grid-flow-row w-full'>
-          <div className='grow z-20 mt-3' onClick={() => onPageChange('home')}><HomeLightBtn /></div>
-          <div className='grow z-20' onClick={() => onPageChange('tasks')}><TasksLightBtn /></div>
-          <div className='grow z-20 -mt-7' onClick={() => onPageChange('shop')}><ShopLightBtn /></div>
-          <div className='grow z-20' onClick={() => onPageChange('leaderboard')}><BoardLightBtn /></div>
-          <div className='grow z-20 mt-3' onClick={() => onPageChange('powerups')}><PowerLightBtn /></div>
+        <div className='flex'>
+          <div className='grow z-20 mt-3 w-[20%] items-center justify-center flex' onClick={() => onPageChange('home')}><HomeLightBtn /></div>
+          <div className='grow z-20 w-[20%] items-center justify-center flex' onClick={() => onPageChange('tasks')}><TasksLightBtn /></div>
+          <div className='grow z-20 -mt-7 w-[30%] items-center justify-center flex' onClick={() => onPageChange('shop')}><ShopLightBtn /></div>
+          <div className='grow z-20 w-[20%] items-center justify-center flex' onClick={() => onPageChange('leaderboard')}><BoardLightBtn /></div>
+          <div className='grow z-20 mt-3 w-[20%] items-center justify-center flex' onClick={() => onPageChange('powerups')}><PowerLightBtn /></div>
         </div>
       }
     </div>

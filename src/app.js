@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { App, Page,  } from 'konsta/react';
+import { App, Page, } from 'konsta/react';
 
 import Footer from './components/Footer';
 import Header from './components/Header';
 import themes from './components/themes';
-import Tasks from './components/Tasks'; 
-import LoadingScreen from './components/LoadingScreen'; 
+import Tasks from './components/Tasks';
+import LoadingScreen from './components/LoadingScreen';
 import Home from './page/Home';
 
 import WebApp, { initTelegramWebApp, getTelegramUser } from './utils/telegramWebApp';
@@ -39,13 +39,13 @@ function MyApp() {
     if (user) {
       setTelegramUser(user);
     }
-    
+
     const isLargeScreen = window.matchMedia('(min-width: 1024px)').matches;
-    
+
     if (isLargeScreen) {
       setIsDarkMode(true);
     } else {
-      setIsDarkMode(true);
+      setIsDarkMode(WebApp.colorScheme === 'dark');
     }
 
     WebApp.onEvent('themeChanged', () => {
@@ -90,9 +90,9 @@ function MyApp() {
     switch (activePage) {
       case 'tasks':
         return (
-          <Tasks 
-            isDarkMode={isDarkMode} 
-            onClaimX={handleXFollowClaim} 
+          <Tasks
+            isDarkMode={isDarkMode}
+            onClaimX={handleXFollowClaim}
             xClaimed={xFollowClaimed}
             onClaimYouTube={handleYouTubeClaim}
             youtubeClaimed={youtubeClaimed}
@@ -124,29 +124,26 @@ function MyApp() {
   return (
     <App theme={isDarkMode ? 'dark' : 'light'}>
       <Page className={`flex items-center justify-center h-full w-full ${theme.background}`}>
-        { loading ? (
+        {loading ? (
           <LoadingScreen />
-          ) : (
-            <div className={`w-full h-full flex flex-col mobile-container relative 
-              // ${theme.containerBg}
-              bg-cover bg-center
-            `}  style={appStyle}>
-                <Header 
-                  points={points} 
-                  level={level} 
-                  isDarkMode={isDarkMode} 
-                  telegramUser={telegramUser}
-                />
-                
-                {renderActivePage()}
-              
-              <Footer 
-                isDarkMode={isDarkMode} 
-                activePage={activePage} 
-                onPageChange={setActivePage}
-              />
-            </div>
-          )
+        ) : (
+          <div className={`w-full h-full flex flex-col mobile-container relative bg-cover bg-center`} style={appStyle}>
+            <Header
+              points={points}
+              level={level}
+              isDarkMode={isDarkMode}
+              telegramUser={telegramUser}
+            />
+
+            {renderActivePage()}
+
+            <Footer
+              isDarkMode={isDarkMode}
+              activePage={activePage}
+              onPageChange={setActivePage}
+            />
+          </div>
+        )
         }
       </Page>
     </App>
