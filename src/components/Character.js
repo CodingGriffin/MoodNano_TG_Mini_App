@@ -23,11 +23,11 @@ const Character = ({ mood, onTap, isDarkMode, isInteracting }) => {
     },
     sad: {
       webm: '/assets/sad.webm',
-      frameCount: 187,
+      frameCount: 168,
     },
     playful: {
       webm: '/assets/playful.webm',
-      frameCount: 176,
+      frameCount: 168,
     },
     happy: {
       webm: '/assets/happy.webm',
