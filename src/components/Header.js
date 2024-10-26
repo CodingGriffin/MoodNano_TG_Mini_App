@@ -28,9 +28,9 @@ const Header = ({ points, isDarkMode, telegramUser }) => {
   const level = calculateLevel(points);
   return (
     <div className="items-center h-24">
-      <div className='w-full absolute -top-3 z-10 opacity-1'>
+      {/* <div className='w-full absolute -top-3 z-10 opacity-1'>
         <HeaderBackground isDarkmode={isDarkMode} />
-      </div>
+      </div> */}
       <div className='flex grid-flow-row w-full pt-4'>
         <div className='flex items-center w-40 justify-center'>
           <img className='flex z-20' src="/assets/header/avatar.svg" alt="avatar" />

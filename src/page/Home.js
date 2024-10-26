@@ -90,13 +90,7 @@ const Home = ({ isDarkMode, setMood, mood }) => {
         <Functions isDarkMode={isDarkMode} />
         <div className="flex-grow flex items-center justify-center mb-6 sm:mb-6" style={{ marginBottom: '10%' }}>
           <div className="w-full aspect-square mx-auto rounded-lg overflow-visible relative" style={{ maxWidth: '130%' }}>
-            <Character
-              mood={mood}
-              isAnimated={true}
-              onTap={() => handleInteraction('encourage')}
-              isInteracting={isInteracting}
-              isDarkMode={isDarkMode}
-            />
+
           </div>
         </div>
       </div>

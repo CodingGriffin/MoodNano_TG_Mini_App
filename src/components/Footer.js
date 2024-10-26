@@ -32,9 +32,9 @@ const Footer = ({ activePage, onPageChange, isDarkMode }) => {
 
   return (
     <div className="absolute bottom-0 right-0 w-full">
-      <div className='w-full'>
+      {/* <div className='w-full'>
         <FooterBackground isDarkMode={isDarkMode} />
-      </div>
+      </div> */}
       {isDarkMode ?
         <div className='flex '>
           <div className='grow z-20 -mb-8 w-[20%] items-center justify-center flex' onClick={() => onPageChange('home')}><HomeDarkBtn /></div>
