@@ -50,7 +50,7 @@ const MoodDisplay = ({ mood, isDarkMode = true, interactionCount, energy, points
   const filledProgress = getMoodProgress();
   const energyProgress = getEnergyProgress();
   return (
-    <div className="flex items-center relative mt-8">
+    <div className="flex items-center relative mt-20">
       <div className='w-full absolute -top-200 mb-12 left-1/2 transform -translate-x-1/2 z-10'><MixedBg isDarkMode={isDarkMode} /></div>
       <div className='absolute flex grid-flow-row -ml-36 left-1/2 transform -translate-x-1/2 z-20'>
         {/* <div className='absolute left-6 -top-11 z-10'><MoodBg isDarkMode={isDarkMode} /></div> */}

@@ -27,7 +27,7 @@ const Header = ({ points, isDarkMode, telegramUser }) => {
 
   const level = calculateLevel(points);
   return (
-    <div className="items-center h-24">
+    <div className="items-center">
       {/* <div className='w-full absolute -top-3 z-10 opacity-1'>
         <HeaderBackground isDarkmode={isDarkMode} />
       </div> */}

@@ -84,7 +84,7 @@ const Home = ({ isDarkMode, setMood, mood }) => {
   return (
     <>
       <div className="w-full flex-grow flex flex-col">
-        <div className='w-full h-16'>
+        <div className='w-full'>
           <MoodDisplay isDarkMode={isDarkMode} interactionCount={interactionCount} energy={energy} points={points} mood={mood} />
         </div>
         <Functions isDarkMode={isDarkMode} />
