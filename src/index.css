@@ -101,14 +101,14 @@ html, body, #root {
   }
 }
 
-@media (min-width: 900px) {
+/* @media (min-width: 900px) {
   .mobile-container {
     max-width: 420px;
     max-height: 800px;
     
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   }
-}
+} */
 
 .footer-container {
   background-color: transparent;

@@ -37,19 +37,19 @@ const Footer = ({ activePage, onPageChange, isDarkMode }) => {
       </div>
       {isDarkMode ?
         <div className='flex '>
-          <div className='grow z-20 mt-3' onClick={() => onPageChange('home')}><HomeDarkBtn /></div>
+          <div className='grow z-20 mb-3' onClick={() => onPageChange('home')}><HomeDarkBtn /></div>
           <div className='grow z-20' onClick={() => onPageChange('tasks')}><TasksDarkBtn /></div>
-          <div className='grow z-20 -mt-7' onClick={() => onPageChange('shop')}><ShopDarkBtn /></div>
+          <div className='grow z-20 mb-7' onClick={() => onPageChange('shop')}><ShopDarkBtn /></div>
           <div className='grow z-20' onClick={() => onPageChange('leaderboard')}><BoardDarkBtn /></div>
-          <div className='grow z-20 mt-3' onClick={() => onPageChange('powerups')}><PowerDarkBtn /></div>
+          <div className='grow z-20 mb-3' onClick={() => onPageChange('powerups')}><PowerDarkBtn /></div>
         </div>
         :
         <div className='flex'>
-          <div className='grow z-20 mt-3 w-[20%] items-center justify-center flex' onClick={() => onPageChange('home')}><HomeLightBtn /></div>
+          <div className='grow z-20 -mb-8 w-[20%] items-center justify-center flex' onClick={() => onPageChange('home')}><HomeLightBtn /></div>
           <div className='grow z-20 w-[20%] items-center justify-center flex' onClick={() => onPageChange('tasks')}><TasksLightBtn /></div>
-          <div className='grow z-20 -mt-7 w-[30%] items-center justify-center flex' onClick={() => onPageChange('shop')}><ShopLightBtn /></div>
+          <div className='grow z-20 mb-5 w-[30%] items-center justify-center flex' onClick={() => onPageChange('shop')}><ShopLightBtn /></div>
           <div className='grow z-20 w-[20%] items-center justify-center flex' onClick={() => onPageChange('leaderboard')}><BoardLightBtn /></div>
-          <div className='grow z-20 mt-3 w-[20%] items-center justify-center flex' onClick={() => onPageChange('powerups')}><PowerLightBtn /></div>
+          <div className='grow z-20 -mb-8 w-[20%] items-center justify-center flex' onClick={() => onPageChange('powerups')}><PowerLightBtn /></div>
         </div>
       }
     </div>

@@ -1,0 +1,25 @@
+<svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g filter="url(#filter0_b_76_1008)">
+          <rect width="46" height="46" rx="10" fill="white" fill-opacity="0.5" />
+          <rect x="0.25" y="0.25" width="45.5" height="45.5" rx="9.75" stroke="url(#paint0_linear_76_1008)" stroke-width="0.5" />
+          <rect x="0.25" y="0.25" width="45.5" height="45.5" rx="9.75" stroke="url(#paint1_linear_76_1008)" stroke-width="0.5" />
+          <path d="M19.9 27.53C20.38 27.01 21.12 27.05 21.54 27.62L22.14 28.42C22.61 29.05 23.39 29.05 23.86 28.42L24.45 27.63C24.87 27.07 25.61 27.03 26.09 27.54C27.14 28.66 27.99 28.29 27.99 26.72V20.09C27.99 17.72 27.43 17.13 25.21 17.13H20.77C18.55 17.13 17.99 17.72 17.99 20.09V26.72C18 28.27 18.86 28.64 19.9 27.53Z" fill="#222222" />
+          <path opacity="0.4" d="M27.19 13H18.82C15.18 13 13.01 15.17 13.01 18.81V27.18C13.01 30.82 15.18 32.99 18.82 32.99H27.19C30.83 32.99 33 30.82 33 27.18V18.81C33 15.17 30.83 13 27.19 13Z" fill="#222222" />
+        </g>
+        <defs>
+          <filter id="filter0_b_76_1008" x="-54" y="-54" width="154" height="154" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feGaussianBlur in="BackgroundImageFix" stdDeviation="27" />
+            <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_76_1008" />
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_76_1008" result="shape" />
+          </filter>
+          <linearGradient id="paint0_linear_76_1008" x1="48.5" y1="-4" x2="31.9312" y2="-20.8414" gradientUnits="userSpaceOnUse">
+            <stop stop-color="white" stop-opacity="0" />
+            <stop offset="1" stop-color="white" />
+          </linearGradient>
+          <linearGradient id="paint1_linear_76_1008" x1="35.5" y1="46" x2="22.9532" y2="33.7877" gradientUnits="userSpaceOnUse">
+            <stop stop-color="white" />
+            <stop offset="1" stop-color="white" stop-opacity="0" />
+          </linearGradient>
+        </defs>
+      </svg>

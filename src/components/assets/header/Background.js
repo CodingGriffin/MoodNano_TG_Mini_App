@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactComponent as Header } from "./Header.svg"
+import { ReactComponent as Header } from "./header_white_bg.svg"
 
 const HeaderBackground = ({ width = 178, height = 108, fillColor = '#211a6b', status = "sad", isDarkmode = true }) => {
   const src = isDarkmode ? "/assets/header/header_dark_bg.png" : "//assets/header/Header.png";

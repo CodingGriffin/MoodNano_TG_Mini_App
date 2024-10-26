@@ -52,21 +52,21 @@ const MoodDisplay = ({ mood, isDarkMode = true, interactionCount, energy, points
   return (
     <div className="flex items-center relative mt-8">
       <div className='w-full absolute -top-200 mb-12 left-1/2 transform -translate-x-1/2 z-10'><MixedBg isDarkMode={isDarkMode} /></div>
-      <div className='flex grid-flow-row w-72'>
+      <div className='absolute flex grid-flow-row -ml-36 left-1/2 transform -translate-x-1/2 z-20'>
         {/* <div className='absolute left-6 -top-11 z-10'><MoodBg isDarkMode={isDarkMode} /></div> */}
-        <p className='absolute flex grid-flow-row left-16 -top-7 z-10 text-xs pt-1'>
+        <p className='relative flex grid-flow-row left-16 -top-7 z-10 text-xs pt-2'>
           <div className='w-4 h-4 mx-0.5'><MoodStatus mood={mood} /></div>
           {isDarkMode ?
-            <p className='text-white'>SAD</p>
+            <p className='text-white'>{mood.toUpperCase()}</p>
             :
-            <p className='text-black'>SAD</p>
+            <p className='text-black'>{mood.toUpperCase()}</p>
           }
         </p>
-        <div className="absolute left-12 -top-3 z-20 relative w-2/3 h-[13.23px]">
+        <div className="relative -top-1 z-20 w-20">
           <ProgressBar progress={filledProgress} className="qwe" />
         </div>
       </div>
-      <div className='flex grow w-full items-center relative -top-8 w-full'>
+      <div className='absolute flex grow w-full items-center relative -top-8 w-full'>
         {/* <div className='absolute -top-12 left-1/2 transform -translate-x-1/2 z-20'><TimeBg isDarkMode={isDarkMode} /></div> */}
         <div className='absolute -top-20 left-1/2 transform -translate-x-1/2 z-20' ><MoodStatusBg mood={mood} isDarkMode={isDarkMode} /></div>
         <div className='absolute -top-14 left-1/2 transform -translate-x-1/2 z-30'><MoodStatus mood={mood} /></div>
@@ -82,17 +82,17 @@ const MoodDisplay = ({ mood, isDarkMode = true, interactionCount, energy, points
           </>
         }
       </div>
-      <div className='flex grid-flow-row w-72'>
+      <div className=' absolute  flex grid-flow-row ml-24 left-1/2 transform -translate-x-1/2 z-20'>
         {/* <div className='absolute right-6 -top-11 z-10'><EnergyBg isDarkMode={isDarkMode} /></div> */}
-        <p className='absolute flex grid-flow-row right-15 -top-7 z-20 text-xs text-white pt-1'>
-          <div className='w-3 h-3 mx-0.5 pt-1'><Energy /></div>
+        <p className='relative flex grid-flow-row -right-16 -top-7 z-20 text-xs text-white pt-2'>
+          <div className='relative w-3 h-3 mx-0.5 pt-1'><Energy /></div>
           {isDarkMode ?
             <p className='text-white'>ENERGY</p>
             :
             <p className='text-black'>ENERGY</p>
           }
         </p>
-        <div className="absolute right-2 -top-3 z-20 relative w-2/3 h-[13.23px]">
+        <div className="relative -top-1 z-20 w-20">
           <ProgressBar progress={energyProgress} className="qwe" />
         </div>
       </div>
